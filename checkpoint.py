@@ -21,7 +21,7 @@ def Ret_Pregunta01():
     reg_Mexico = df_consumo_energia[df_consumo_energia["Entity"]=="Mexico"].shape[0]
     tupla = (reg_Colombia, reg_Mexico)
     return tupla
-    #return 'Funcion incompleta'
+
 
 def Ret_Pregunta02():
     '''
@@ -36,7 +36,7 @@ def Ret_Pregunta02():
     del df_consumo_energia["Entity"]
     columnas = df_consumo_energia.shape[1]
     return columnas
-    #return 'Funcion incompleta'
+
 
 def Ret_Pregunta03():
     '''
@@ -49,7 +49,7 @@ def Ret_Pregunta03():
     df_consumo_energia = pd.read_csv('datasets/Fuentes_Consumo_Energia.csv')
     reg_year = df_consumo_energia["Year"].count()
     return reg_year
-    #return 'Funcion incompleta'
+
 
 def Ret_Pregunta04():
     '''
@@ -71,7 +71,7 @@ def Ret_Pregunta04():
     df_consumo_energia["Consumo_Total"] = df_consumo_energia["Coal_Consumption_EJ"]*277.778 + df_consumo_energia["Gas_Consumption_EJ"]*277.778 + df_consumo_energia["Oil_Consumption_EJ"]*277.778 + df_consumo_energia["Geo_Biomass_Other_TWh"] + df_consumo_energia["Hydro_Generation_TWh"] + df_consumo_energia["Nuclear_Generation_TWh"] + df_consumo_energia["Solar_Generation_TWh"] + df_consumo_energia["Wind_Generation_TWh"]
     valor_consumo = df_consumo_energia.loc[(df_consumo_energia["Entity"] == "World") & (df_consumo_energia["Year"] == 2019), "Consumo_Total"]
     return round(float(valor_consumo.iloc[0]), 2)
-    #return 'Funcion incompleta'
+
 
 def Ret_Pregunta05():
     '''
@@ -81,8 +81,11 @@ def Ret_Pregunta05():
     para la entidad 'Europe' retornando ese valor en un dato de tipo entero.
     '''
     #Tu código aca:
-    
-    #return 'Funcion incompleta'
+    df_consumo_energia = pd.read_csv('datasets/Fuentes_Consumo_Energia.csv')
+    df_Europa = df_consumo_energia[df_consumo_energia["Entity"] == "Europe"]
+    año = df_Europa.loc[df_Europa["Hydro_Generation_TWh"].idxmax(), "Year"]
+    return año
+
 
 def Ret_Pregunta06(m1, m2, m3):
     '''
@@ -99,6 +102,7 @@ def Ret_Pregunta06(m1, m2, m3):
             False            -> Valor devuelto por la función en este ejemplo
     '''
     #Tu código aca:
+    
     #return 'Funcion incompleta'
 
 def Ret_Pregunta07():
