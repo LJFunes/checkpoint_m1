@@ -144,7 +144,7 @@ def Ret_Pregunta09():
     df_fem = df_Tabla[df_Tabla["sexo"]=="F"]
     prom_fem = df_fem["score"].mean()
     return (round(prom_fem,2),round(prom_masc,2))
-    #return 'Funcion incompleta'
+
 
 def Ret_Pregunta10(lista):
     '''
@@ -160,4 +160,11 @@ def Ret_Pregunta10(lista):
             3    -> Debe ser el valor devuelto por la función Ret_Pregunta10() en este ejemplo
     '''
     #Tu código aca:
-    #return 'Funcion incompleta
+    from Lista import Lista
+    contador = 0
+    puntero = lista.getCabecera()
+    while puntero is not None:
+        contador += 1
+        puntero = puntero.getSiguiente()
+    return contador
+
