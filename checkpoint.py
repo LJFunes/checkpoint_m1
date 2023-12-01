@@ -16,9 +16,9 @@ def Ret_Pregunta01():
     Pista: averiguar la funcion Shape
     '''
     #Tu código aca:
-    df = pd.read_csv('datasets/Fuentes_Consumo_Energia.csv')
-    reg_Colombia = df[df["Entity"]=="Colombia"].shape[0]
-    reg_Mexico = df[df["Entity"]=="Mexico"].shape[0]
+    df_consumo_energia = pd.read_csv('datasets/Fuentes_Consumo_Energia.csv')
+    reg_Colombia = df_consumo_energia[df_consumo_energia["Entity"]=="Colombia"].shape[0]
+    reg_Mexico = df_consumo_energia[df_consumo_energia["Entity"]=="Mexico"].shape[0]
     tupla = (reg_Colombia, reg_Mexico)
     return tupla
     #return 'Funcion incompleta'
@@ -31,6 +31,11 @@ def Ret_Pregunta02():
     retornando ese valor en un dato de tipo entero.
     '''
     #Tu código aca:
+    df_consumo_energia = pd.read_csv('datasets/Fuentes_Consumo_Energia.csv')
+    del df_consumo_energia["Code"]
+    del df_consumo_energia["Entity"]
+    columnas = df_consumo_energia.shape[1]
+    return columnas
     #return 'Funcion incompleta'
 
 def Ret_Pregunta03():
