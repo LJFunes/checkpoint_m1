@@ -16,6 +16,11 @@ def Ret_Pregunta01():
     Pista: averiguar la funcion Shape
     '''
     #Tu código aca:
+    df = pd.read_csv('datasets/Fuentes_Consumo_Energia.csv')
+    reg_Colombia = df[df["Entity"]=="Colombia"].shape[0]
+    reg_Mexico = df[df["Entity"]=="Mexico"].shape[0]
+    tupla = (reg_Colombia, reg_Mexico)
+    return tupla
     #return 'Funcion incompleta'
 
 def Ret_Pregunta02():
