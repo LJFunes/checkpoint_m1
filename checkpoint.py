@@ -102,7 +102,8 @@ def Ret_Pregunta06(m1, m2, m3):
             False            -> Valor devuelto por la función en este ejemplo
     '''
     #Tu código aca:
-    
+    if (m1.shape[1]==m2.shape[0]) and (m2.shape[1]==m3.shape[0]): return True
+    else: return False    
     #return 'Funcion incompleta'
 
 def Ret_Pregunta07():
