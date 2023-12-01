@@ -114,6 +114,8 @@ def Ret_Pregunta07():
     devolver la suma de los valores de esta, con 4 decimales después del punto, redondeado.
     '''
     #Tu código aca:
+    df_cotizac = pd.read_csv('datasets/GGAL - Cotizaciones historicas.csv')
+    return round(df_cotizac["maximo"].sum(),4)
     #return 'Funcion incompleta'
 
 def Ret_Pregunta08():
