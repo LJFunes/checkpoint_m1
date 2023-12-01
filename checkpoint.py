@@ -136,6 +136,14 @@ def Ret_Pregunta09():
     "datasets/Tabla1_ejercicio.csv" y "datasets/Tabla2_ejercicio.csv".
     Esta función debe retornar: score_promedio_femenino y score_promedio_masculino en formato tupla, teniendo en cuenta que no debe haber valores repetidos.'''
     #Tu código aca:
+    df_Tabla1 = pd.read_csv('datasets/Tabla1_ejercicio.csv',sep=";")
+    df_Tabla2 = pd.read_csv('datasets/Tabla2_ejercicio.csv',sep=";")
+    df_Tabla = pd.merge(df_Tabla1, df_Tabla2, on="pers_id", how="inner").drop_duplicates()
+    df_masc = df_Tabla[df_Tabla["sexo"]=="M"]
+    prom_masc = df_masc["score"].mean()
+    df_fem = df_Tabla[df_Tabla["sexo"]=="F"]
+    prom_fem = df_fem["score"].mean()
+    return (round(prom_fem,2),round(prom_masc,2))
     #return 'Funcion incompleta'
 
 def Ret_Pregunta10(lista):
