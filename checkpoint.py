@@ -46,6 +46,9 @@ def Ret_Pregunta03():
     retornando ese valor en un dato de tipo entero.
     '''
     #Tu código aca:
+    df_consumo_energia = pd.read_csv('datasets/Fuentes_Consumo_Energia.csv')
+    reg_year = df_consumo_energia["Year"].count()
+    return reg_year
     #return 'Funcion incompleta'
 
 def Ret_Pregunta04():
