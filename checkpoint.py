@@ -67,6 +67,10 @@ def Ret_Pregunta04():
     redondeado a 2 decimales, retornando ese valor en un dato de tipo float.
     '''
     #Tu código aca:
+    df_consumo_energia = pd.read_csv('datasets/Fuentes_Consumo_Energia.csv')
+    df_consumo_energia["Consumo_Total"] = df_consumo_energia["Coal_Consumption_EJ"]*277.778 + df_consumo_energia["Gas_Consumption_EJ"]*277.778 + df_consumo_energia["Oil_Consumption_EJ"]*277.778 + df_consumo_energia["Geo_Biomass_Other_TWh"] + df_consumo_energia["Hydro_Generation_TWh"] + df_consumo_energia["Nuclear_Generation_TWh"] + df_consumo_energia["Solar_Generation_TWh"] + df_consumo_energia["Wind_Generation_TWh"]
+    valor_consumo = df_consumo_energia.loc[(df_consumo_energia["Entity"] == "World") & (df_consumo_energia["Year"] == 2019), "Consumo_Total"]
+    return round(float(valor_consumo.iloc[0]), 2)
     #return 'Funcion incompleta'
 
 def Ret_Pregunta05():
@@ -77,6 +81,7 @@ def Ret_Pregunta05():
     para la entidad 'Europe' retornando ese valor en un dato de tipo entero.
     '''
     #Tu código aca:
+    
     #return 'Funcion incompleta'
 
 def Ret_Pregunta06(m1, m2, m3):
